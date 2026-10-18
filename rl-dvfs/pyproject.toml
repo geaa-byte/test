@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rl-dvfs"
+version = "0.1.0"
+description = "DVFS berbasis Reinforcement Learning (Q-learning) untuk hemat daya saat inferensi AI di Linux"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+rl-dvfs = "rl_dvfs.cli:main"
+
+[tool.setuptools]
+packages = ["rl_dvfs", "rl_dvfs.backends"]

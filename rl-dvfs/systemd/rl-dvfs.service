@@ -1,0 +1,15 @@
+[Unit]
+Description=RL-based DVFS daemon
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/opt/rl-dvfs/.venv/bin/rl-dvfs run --model /var/lib/rl-dvfs/qtable.json
+Restart=on-failure
+RuntimeDirectory=rl-dvfs
+StateDirectory=rl-dvfs
+# Frekuensi dikembalikan saat berhenti (SIGTERM ditangani).
+KillSignal=SIGTERM
+
+[Install]
+WantedBy=multi-user.target
